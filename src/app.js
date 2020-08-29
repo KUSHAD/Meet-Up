@@ -20,7 +20,7 @@ app.get("/indexold.html", (req, res) => {
 
 app.get("/indexnew.html", (req, res) => {
 	res.sendFile(__dirname + "/indexnew.html");
-})
+});
 
 io.of("/stream").on("connection", stream);
 

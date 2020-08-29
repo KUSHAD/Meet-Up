@@ -62,10 +62,10 @@ window.addEventListener('load', () => {
 			let roomLink = `${ location.origin }/indexold.html?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
 
 			//show message with link to room
-			document.querySelector('#room-created').innerHTML = `Room successfully created. Click <a href='${ roomLink }'>here</a> to enter the room.
+			document.querySelector('#room-created').innerHTML = `Room successfully created.
 				Share the below room link with your partners to join the meeting.`;
 			// Expose The meeting link to others
-			document.querySelector('#roomId').value = `${roomLink}`;
+			document.querySelector('#roomId').innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
 			document.querySelector('#roomid').innerHTML = `Room Id :- ${roomName}`;
 			//empty the values
 			document.querySelector('#room-name').value = '';
