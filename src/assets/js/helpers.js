@@ -63,6 +63,7 @@ export default {
 				}
 			});
 		} else {
+			alert('User Media not Available')
 			throw new Error('User media not available');
 		}
 	},
@@ -77,6 +78,7 @@ export default {
 				}
 			});
 		} else {
+			alert('User Media not Available')
 			throw new Error('User media not available');
 		}
 	},
@@ -96,6 +98,7 @@ export default {
 				}
 			});
 		} else {
+			alert('User Media not Available')
 			throw new Error('User media not available');
 		}
 	},

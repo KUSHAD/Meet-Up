@@ -32,14 +32,13 @@ window.addEventListener('load', () => {
 		if (!document.pictureInPictureElement) {
 			document.getElementById('local').requestPictureInPicture()
 				.catch(error => {
-					// Video failed to enter Picture-in-Picture mode.
-					console.error(error);
+					alert(error);
 				});
 		} else {
 			document.exitPictureInPicture()
 				.catch(error => {
 					// Video failed to leave Picture-in-Picture mode.
-					console.error(error);
+					alert(error);
 				});
 		}
 	});
@@ -60,12 +59,14 @@ window.addEventListener('load', () => {
 			sessionStorage.setItem('username', yourName);
 
 			//create room link
-			let roomLink = `${ location.origin }?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
+			let roomLink = `${ location.origin }/indexold.html?room=${ roomName.trim().replace( ' ', '_' ) }_${ helpers.generateRandomString() }`;
 
 			//show message with link to room
-			document.querySelector('#room-created').innerHTML = `Room successfully created. Click <a href='${ roomLink }'>here</a> to enter room.
-                Share the room link with your partners.`;
-
+			document.querySelector('#room-created').innerHTML = `Room successfully created. Click <a href='${ roomLink }'>here</a> to enter the room.
+				Share the below room link with your partners to join the meeting.`;
+			// Expose The meeting link to others
+			document.querySelector('#roomId').value = `${roomLink}`;
+			document.querySelector('#roomid').innerHTML = `Room Id :- ${roomName}`;
 			//empty the values
 			document.querySelector('#room-name').value = '';
 			document.querySelector('#your-name').value = '';
@@ -76,24 +77,6 @@ window.addEventListener('load', () => {
 
 
 	//When the 'Enter room' button is clicked.
-	document.getElementById('enter-room').addEventListener('click', (e) => {
-		e.preventDefault();
-
-		let name = document.querySelector('#username').value;
-
-		if (name) {
-			//remove error message, if any
-			document.querySelector('#err-msg-username').innerHTML = "";
-
-			//save the user's name in sessionStorage
-			sessionStorage.setItem('username', name);
-
-			//reload room
-			location.reload();
-		} else {
-			document.querySelector('#err-msg-username').innerHTML = "Please input your name";
-		}
-	});
 
 
 	document.addEventListener('click', (e) => {

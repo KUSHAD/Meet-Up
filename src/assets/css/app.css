@@ -21,6 +21,11 @@
 	-moz-transition: all 0.3s ease !important;
 }
 
+#roomId {
+	display: block;
+	text-align: center;
+}
+
 #chat-messages {
 	height: 70vh;
 	margin-bottom: 20px;
