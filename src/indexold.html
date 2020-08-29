@@ -11,9 +11,9 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
 			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<link rel='stylesheet' href='assets/css/app.css' type="text/css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.3.2/css/ionic.min.css"
-			integrity="sha512-i1YfKKj5ZBPWvPKyxhmPLvAFFHnf57luvGLb/TSgta3Qgc5qzLo+jYzZAeMZk7pg82SPKn4q00vgVyCvZs+Psw=="
-			crossorigin="anonymous" />
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.3.2/css/ionic.min.css" -->
+		<!-- integrity="sha512-i1YfKKj5ZBPWvPKyxhmPLvAFFHnf57luvGLb/TSgta3Qgc5qzLo+jYzZAeMZk7pg82SPKn4q00vgVyCvZs+Psw==" -->
+		<!-- crossorigin="anonymous" /> -->
 		<script src='/socket.io/socket.io.js'></script>
 		<script type="module" src='assets/js/rtc.js'></script>
 		<script type="module" src='assets/js/events.js'></script>
@@ -103,7 +103,8 @@
 
 				<div class="col-12 col-md-4 offset-md-4 mb-3">
 					<center>
-						<button id='create-room' style="width: 50%;" class="button button-balanced">Create Room</button>
+						<button id='create-room' style="width: 50%;" class="btn btn-block rounded-0 btn-info">Create
+							Room</button>
 					</center>
 
 				</div>
@@ -124,7 +125,9 @@
 
 		<div class="container-fluid" id='username-set' hidden>
 			<div class="row">
-				<div class="col-12 h4 mt-5 text-center" >Your Name</div>
+				<div class="col-12 h4 mt-5 text-center" id="hd"><a href="./indexnew.html">You Have Tried To Join The
+						Room Directly !!! Please Copy The Above URL And Click Here To Paste Your Link And Join The
+						Room</a></div>
 			</div>
 
 			<div class="row mt-2">
