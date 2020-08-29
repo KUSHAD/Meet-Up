@@ -77,7 +77,24 @@ window.addEventListener('load', () => {
 
 
 	//When the 'Enter room' button is clicked.
+	document.getElementById('enter-room').addEventListener('click', (e) => {
+		e.preventDefault();
 
+		let name = document.querySelector('#username').value;
+
+		if (name) {
+			//remove error message, if any
+			document.querySelector('#err-msg-username').innerHTML = "";
+
+			//save the user's name in sessionStorage
+			sessionStorage.setItem('username', name);
+
+			//reload room
+			location.reload();
+		} else {
+			document.querySelector('#err-msg-username').innerHTML = "Please input your name";
+		}
+	});
 
 	document.addEventListener('click', (e) => {
 		if (e.target && e.target.classList.contains('expand-remote-video')) {
