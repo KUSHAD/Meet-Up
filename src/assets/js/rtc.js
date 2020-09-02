@@ -91,7 +91,7 @@ window.addEventListener('load', () => {
 							sender: socketId
 						});
 					}).catch((e) => {
-						console.error(e);
+						alert(e);
 					});
 				} else if (data.description.type === 'answer') {
 					await pc[data.sender].setRemoteDescription(new RTCSessionDescription(data.description));
@@ -112,7 +112,7 @@ window.addEventListener('load', () => {
 
 				h.setLocalStream(stream);
 			}).catch((e) => {
-				console.error(`stream error: ${ e }`);
+				alert(`stream error: ${ e }`);
 			});
 		}
 
@@ -155,7 +155,7 @@ window.addEventListener('load', () => {
 
 					h.setLocalStream(stream);
 				}).catch((e) => {
-					console.error(`stream error: ${ e }`);
+					alert(`stream error: ${ e }`);
 				});
 			}
 
@@ -244,7 +244,7 @@ window.addEventListener('load', () => {
 			pc[partnerName].onsignalingstatechange = (d) => {
 				switch (pc[partnerName].signalingState) {
 					case 'closed':
-						console.log("Signalling state is 'closed'");
+						alert("Signalling state is 'closed'");
 						h.closeVideo(partnerName);
 						break;
 				}
@@ -271,9 +271,7 @@ window.addEventListener('load', () => {
 				screen.getVideoTracks()[0].addEventListener('ended', () => {
 					stopSharingScreen();
 				});
-			}).catch((e) => {
-				console.error(e);
-			});
+			}).catch(() => {});
 		}
 
 
@@ -289,9 +287,7 @@ window.addEventListener('load', () => {
 			}).then(() => {
 				h.toggleShareIcons(false);
 				broadcastNewTracks(myStream, 'video');
-			}).catch((e) => {
-				console.error(e);
-			});
+			}).catch(() => {});
 		}
 
 
@@ -349,7 +345,7 @@ window.addEventListener('load', () => {
 			};
 
 			mediaRecorder.onerror = function (e) {
-				console.error(e);
+				alert(e);
 			};
 		}
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Video Call - My Meetings</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionic/1.3.2/css/ionic.min.css"
+			integrity="sha512-i1YfKKj5ZBPWvPKyxhmPLvAFFHnf57luvGLb/TSgta3Qgc5qzLo+jYzZAeMZk7pg82SPKn4q00vgVyCvZs+Psw=="
+			crossorigin="anonymous" />
+		<link rel='stylesheet' href='assets/css/app.css' type="text/css">
+		<style>
+			.documents {
+				display: flex;
+				justify-content: center;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar fixed-top bg-info rounded-0 d-print-none">
+			<div class="bar bar-header bar-positive">
+				<div class="title">Video Call - My Meetings</div>
+			</div>
+		</nav>
+		<br>
+		<br>
+		<br>
+		<br>
+		<script>
+			getData()
+			async function getData() {
+				const respone = await fetch('/api')
+				const data = await respone.json()
+				for (item of data) {
+					const root = document.createElement('ul');
+					const list = document.createElement('li');
+					const roomName = `${item.roomLink}`
+					const res = `Date & Time Created :- ${item.completeDate} | Room Link :- ${roomName}`
+					list.append(res)
+					root.appendChild(list)
+					document.body.appendChild(root)
+					root.className = 'documents'
+				}
+			}
+		</script>
+	</body>
+
+</html>

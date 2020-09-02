@@ -267,7 +267,9 @@ export default {
 					totalRemoteVideosDesktop <= 15 ? '20%' : (
 						totalRemoteVideosDesktop <= 18 ? '16%' : (
 							totalRemoteVideosDesktop <= 23 ? '15%' : (
-								totalRemoteVideosDesktop <= 32 ? '12%' : '10%'
+								totalRemoteVideosDesktop <= 32 ? '12%' : (
+									totalRemoteVideosDesktop <= 41 ? '7%' : '5%'
+								)
 							)
 						)
 					)
@@ -281,7 +283,9 @@ export default {
 		}
 	},
 
-
+	/**
+	 * @param {MediaProvider} str
+	 */
 	createDemoRemotes(str, total = 6) {
 		let i = 0;
 

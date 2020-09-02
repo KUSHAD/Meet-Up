@@ -66,10 +66,33 @@ window.addEventListener('load', () => {
 				Share the below room link with your partners to join the meeting.`;
 			// Expose The meeting link to others
 			document.querySelector('#roomId').innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
-			document.querySelector('#roomid').innerHTML = `Room Id :- ${roomName}`;
+			document.querySelector('#roomid').innerHTML = `Room Id :- ${roomLink}`;
 			//empty the values
 			document.querySelector('#room-name').value = '';
 			document.querySelector('#your-name').value = '';
+
+			const dateThing = new Date();
+			const date = dateThing.getDate();
+			const month = dateThing.getMonth();
+			const year = dateThing.getFullYear();
+			const hour = dateThing.getHours();
+			const min = dateThing.getMinutes();
+			const sec = dateThing.getSeconds();
+			const completeDate = `${date}/${month}/${year} ${hour}:${min}:${sec}`;
+
+			const data = {
+				completeDate,
+				roomLink
+			};
+			const options = {
+				method: 'POST',
+				body: JSON.stringify(data),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			};
+			fetch('/api', options);
+
 		} else {
 			document.querySelector('#err-msg').innerHTML = "All fields are required";
 		}
@@ -92,7 +115,7 @@ window.addEventListener('load', () => {
 			//reload room
 			location.reload();
 		} else {
-			document.querySelector('#err-msg-username').innerHTML = "Please input your name";
+			document.querySelector('#err-msg-username').innerHTML = "Please Write your name";
 		}
 	});
 
