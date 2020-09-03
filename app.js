@@ -17,7 +17,7 @@ app.use(express.static("src"));
 
 app.use(
 	express.json({
-		limit: "200b",
+		limit: "2mb",
 	})
 );
 

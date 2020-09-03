@@ -14,22 +14,20 @@
 			crossorigin="anonymous" />
 		<link rel='stylesheet' href='assets/css/app.css' type="text/css">
 		<style>
-			.documents {
-				display: flex;
-				justify-content: center;
+			.card {
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 			}
 
 		</style>
 	</head>
 
 	<body>
-		<nav class="navbar fixed-top bg-info rounded-0 d-print-none">
-			<div class="bar bar-header bar-positive">
-				<div class="title">Video Call - My Meetings</div>
+		<div class="navbar fixed-top bg-info rounded-0 d-print-none">
+			<div style="color: white;" class="title"><a href="/"><img src="./assets/Img/chevron-back-outline.svg"
+						width="20" /></a>&nbsp;&nbsp;
+				<b>Video Call - My Meetings</b>
 			</div>
-		</nav>
-		<br>
-		<br>
+		</div>
 		<br>
 		<br>
 		<script>
@@ -38,14 +36,15 @@
 				const respone = await fetch('/api')
 				const data = await respone.json()
 				for (item of data) {
-					const root = document.createElement('ul');
-					const list = document.createElement('li');
-					const roomName = `${item.roomLink}`
-					const res = `Date & Time Created :- ${item.completeDate} | Room Link :- ${roomName}`
-					list.append(res)
-					root.appendChild(list)
-					document.body.appendChild(root)
-					root.className = 'documents'
+					const root = document.createElement('p');
+					const data = document.createElement('div');
+					const script = document.createElement('span');
+					// script.innerHTML = `Date and Time Created :- ${item.completeDate} | Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Meeting Subject :- ${item.meetingSubject}`
+					script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} `
+					data.append(script)
+					root.append(data);
+					document.body.appendChild(root);
+					data.className = `card`
 				}
 			}
 		</script>

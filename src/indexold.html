@@ -2,7 +2,7 @@
 <html>
 
 	<head>
-		<title>Multi-User Video Call | New Meeting </title>
+		<title>Multi-User Video Call </title>
 
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -48,8 +48,8 @@
 
 		<nav class="navbar fixed-top bg-info rounded-0 d-print-none">
 
-			<div style="color:white;" class="title"><b>Video Call
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="roomid"></span> </b></div>
+			<div style="color:white;" class="title"><a href="/"><img src="./assets/Img/chevron-back-outline.svg"
+						width="20" /></a>&nbsp;&nbsp;<b>Video Call</b></div>
 			</div>
 
 			<div class="pull-right room-comm" hidden>
@@ -104,9 +104,14 @@
 
 				<div class="col-12 col-md-4 offset-md-4 mb-3">
 					<label for="your-name">Your Name</label>
-					<input type="text" id='your-name' class="form-control rounded-0" placeholder="Your Name">
+					<input type="text" id='your-name' maxlength="100" class="form-control rounded-0"
+						placeholder="Your Name">
 				</div>
-
+				<div class="col-12 col-md-4 offset-md-4 mb-3">
+					<label for="subject">Subject For Your Meeting</label>
+					<input type="text" maxlength="250" id='subject' class="form-control rounded-0"
+						placeholder="Subject For Your Meeting">
+				</div>
 				<div class="col-12 col-md-4 offset-md-4 mb-3">
 					<center>
 						<button id='create-room' style="width: 50%;" class="btn btn-block rounded-0 btn-info">Create

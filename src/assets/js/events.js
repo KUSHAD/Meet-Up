@@ -50,8 +50,9 @@ window.addEventListener('load', () => {
 
 		let roomName = document.querySelector('#room-name').value;
 		let yourName = document.querySelector('#your-name').value;
+		let meetingSubject = document.querySelector('#subject').value;
 
-		if (roomName && yourName) {
+		if (roomName && yourName && meetingSubject) {
 			//remove error message, if any
 			document.querySelector('#err-msg').innerHTML = "";
 
@@ -66,11 +67,11 @@ window.addEventListener('load', () => {
 				Share the below room link with your partners to join the meeting.`;
 			// Expose The meeting link to others
 			document.querySelector('#roomId').innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
-			document.querySelector('#roomid').innerHTML = `Room Id :- ${roomLink}`;
+			// document.querySelector('#roomid').innerHTML = `Room Id :- ${roomLink}`;
 			//empty the values
 			document.querySelector('#room-name').value = '';
 			document.querySelector('#your-name').value = '';
-
+			document.querySelector('#subject').value = '';
 			const dateThing = new Date();
 			const date = dateThing.getDate();
 			const month = dateThing.getMonth();
@@ -81,6 +82,7 @@ window.addEventListener('load', () => {
 			const completeDate = `${date}/${month}/${year} ${hour}:${min}:${sec}`;
 
 			const data = {
+				meetingSubject,
 				completeDate,
 				roomLink
 			};
