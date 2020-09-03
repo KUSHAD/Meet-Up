@@ -33,10 +33,11 @@ app.get('/api', (req, res) => {
 })
 
 
+server.listen(port);
+
+
 app.post("/api", (request, respone) => {
 	dataBase.insert(request.body);
 });
 
 io.of("/stream").on("connection", stream);
-
-server.listen(port);
