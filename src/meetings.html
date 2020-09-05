@@ -13,9 +13,14 @@
 			integrity="sha512-i1YfKKj5ZBPWvPKyxhmPLvAFFHnf57luvGLb/TSgta3Qgc5qzLo+jYzZAeMZk7pg82SPKn4q00vgVyCvZs+Psw=="
 			crossorigin="anonymous" />
 		<link rel='stylesheet' href='assets/css/app.css' type="text/css">
+		<script src="./meetings.js"></script>
 		<style>
 			.card {
 				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			}
+
+			button {
+				background-color: #ffffff;
 			}
 
 		</style>
@@ -31,23 +36,24 @@
 		<br>
 		<br>
 		<script>
-			getData()
-			async function getData() {
-				const respone = await fetch('/api')
-				const data = await respone.json()
-				for (item of data) {
-					const root = document.createElement('p');
-					const data = document.createElement('div');
-					const script = document.createElement('span');
-					// script.innerHTML = `Date and Time Created :- ${item.completeDate} | Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Meeting Subject :- ${item.meetingSubject}`
-					script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} `
-					data.append(script)
-					root.append(data);
-					document.body.appendChild(root);
-					data.className = `card`
-				}
-			}
+			// getData()
+			// async function getData() {
+			// 	const respone = await fetch('/api')
+			// 	const data = await respone.json()
+			// 	for (item of data) {
+			// 		const root = document.createElement('p');
+			// 		const data = document.createElement('div');
+			// 		const script = document.createElement('span');
+			// 		// script.innerHTML = `Date and Time Created :- ${item.completeDate} | Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Meeting Subject :- ${item.meetingSubject}`
+			// 		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} `
+			// 		data.append(script)
+			// 		root.append(data);
+			// 		document.body.appendChild(root);
+			// 		data.className = `card`
+			// 	}
+			// }
 		</script>
+
 	</body>
 
 </html>

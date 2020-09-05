@@ -24,13 +24,13 @@ app.use(
 app.get('/api', (req, res) => {
 	dataBase.find({}, (err, data) => {
 		if (err) {
-			res.end()
+			res.end();
 			return;
 		} else {
-			res.json(data)
+			res.json(data);
 		}
-	})
-})
+	});
+});
 
 
 server.listen(port);
@@ -38,6 +38,15 @@ server.listen(port);
 
 app.post("/api", (request, respone) => {
 	dataBase.insert(request.body);
+});
+
+app.post("/pi", (req, res) => {
+	dataBase.remove(req.body, err => {
+		if (err) {
+			res.end();
+			return;
+		}
+	})
 });
 
 io.of("/stream").on("connection", stream);
