@@ -67,7 +67,12 @@ window.addEventListener('load', () => {
 				Share the below room link with your partners to join the meeting.`;
 			// Expose The meeting link to others
 			document.querySelector('#roomId').innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
-			// document.querySelector('#roomid').innerHTML = `Room Id :- ${roomLink}`;
+			document.getElementById('share-whatsapp').style.display = `block`
+			document.getElementById('share-whatsapp').addEventListener("click", () => {
+				let whatsappMsg = `@${yourName} has invited you for a meeting for ${meetingSubject} ,  Meeting link :-%0D%0A ${roomLink}`
+
+				window.location = `https://api.whatsapp.com/send?text=${whatsappMsg}`
+			})
 			//empty the values
 			document.querySelector('#room-name').value = '';
 			document.querySelector('#your-name').value = '';
