@@ -21,7 +21,7 @@ app.use(
 	})
 );
 
-app.get('/api', (req, res) => {
+app.get("/api", (req, res) => {
 	dataBase.find({}, (err, data) => {
 		if (err) {
 			res.end();
@@ -32,21 +32,19 @@ app.get('/api', (req, res) => {
 	});
 });
 
-
 server.listen(port);
-
 
 app.post("/api", (request, respone) => {
 	dataBase.insert(request.body);
 });
 
 app.post("/pi", (req, res) => {
-	dataBase.remove(req.body, err => {
+	dataBase.remove(req.body, (err) => {
 		if (err) {
 			res.end();
 			return;
 		}
-	})
+	});
 });
 
 io.of("/stream").on("connection", stream);
