@@ -1,7 +1,7 @@
 {
 	"name": "Meet Up",
 	"short_name": "Meet Up",
-	"start_url": "./index.html",
+	"start_url": "/",
 	"description": "This Is A Video Conferencing Platform Made Specially For Meeting Of Friends And For Organising Meetings",
 	"display": "minimal-ui",
 	"background_color": "#17A2B8",
