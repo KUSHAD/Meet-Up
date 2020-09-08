@@ -17,8 +17,8 @@
 
 	<body>
 		<div class="navbar fixed-top bg-info rounded-0 d-print-none">
-			<div style="color: white;" class="title"><a href="/"><img src="./assets/Img/chevron-back-outline.svg"
-						width="20" /></a>&nbsp;&nbsp;
+			<div style="color: white;" class="title"><a href="/"
+					style="color: #fff;text-decoration: none;">&#27;</a>&nbsp;&nbsp;
 				<b>Meet Up - Join Meeting</b>
 			</div>
 		</div>
@@ -33,14 +33,14 @@
 			</div>
 
 			<div class="col-12 col-md-4 offset-md-4 mb-3">
-				<label for="link">Room Link</label>
-				<input type="url" id='link' class="form-control rounded-0" required placeholder="Room Link">
+				<label for="link">Meeting Link</label>
+				<input type="url" id='link' class="form-control rounded-0" required placeholder="Meeting Link">
 			</div>
 
 			<div class="col-12 col-md-4 offset-md-4 mb-3">
 				<!-- <button type="submit" id='enter-room' class="btn btn-block rounded-0 btn-info">Enter Room</button> -->
 				<center>
-					<input type="button" id="enter-room" class="button button-royal" value="Submit"
+					<input type="button" id="enter-room" class="button button-royal" value="Join Meeting"
 						onClick="enterRoom()" />
 
 				</center>
@@ -53,6 +53,11 @@
 			</div>
 		</form>
 		<script>
+			console.error("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+			console.warn("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+		</script>
+		<script>
+
 			function enterRoom() {
 				let name = document.querySelector('#username').value;
 				let room = document.querySelector('#link').value;

@@ -49,8 +49,8 @@
 
 		<nav class="navbar fixed-top bg-info rounded-0 d-print-none">
 
-			<div style="color:white;" class="title"><a href="/"><img src="./assets/Img/chevron-back-outline.svg"
-						width="20" /></a>&nbsp;&nbsp;<b>Meet Up</b></div>
+			<div style="color:white;" class="title"><a href="/" style="color: #ffff;text-decoration:none;">
+					&#27;</a>&nbsp;&nbsp;<b>Meet Up</b></div>
 			</div>
 
 			<div class="pull-right room-comm" hidden>
@@ -114,8 +114,8 @@
 				</div>
 				<div class="col-12 col-md-4 offset-md-4 mb-3">
 					<center>
-						<button id='create-room' style="width: 50%;" class="btn btn-block rounded-0 btn-info">Create
-							Room</button>
+						<button id='create-room' style="width: 50%;" class="btn btn-block rounded-0 btn-info">Schedule
+							Meeting</button>
 					</center>
 
 				</div>
@@ -128,8 +128,7 @@
 			<center>
 
 				<span id="roomId"></span>
-				<button id="share-whatsapp" style="display:none; width: 15%;"
-					class="btn btn-block rounded-0 btn-info">Share On
+				<button id="share-whatsapp" style="display:none;" class="btn btn-block rounded-0 btn-info">Share On
 					Whatsapp</button>
 			</center>
 
@@ -143,7 +142,7 @@
 				<input type="text" id='username' class="form-control rounded-0" placeholder="Your Name">
 			</div>
 			<br>
-			<button id="enter-room" class="btn btn-block rounded-0 btn-info">Join Room</button>
+			<button id="enter-room" class="btn btn-block rounded-0 btn-info">Join Meeting</button>
 
 			<div class="row mt-2">
 				<div class="col-12 text-center">
@@ -179,6 +178,10 @@
 				</div>
 			</div>
 		</div>
+		<script>
+			console.error("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+			console.warn("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+		</script>
 	</body>
 
 </html>

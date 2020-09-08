@@ -1,14 +1,13 @@
 // @ts-check
 getData();
 async function getData() {
-	const respone = await fetch('/api');
+	const respone = await fetch("/api");
 	const data = await respone.json();
-	console.log(data);
+	// console.log(data);
 	for (var item of data) {
-
-		const root = document.createElement('p');
-		const data = document.createElement('div');
-		const script = document.createElement('span');
+		const root = document.createElement("p");
+		const data = document.createElement("div");
+		const script = document.createElement("span");
 		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} <br /> <a href=''  id='${item._id}'>Delete</a>`;
 		data.append(script);
 		root.append(data);
@@ -22,17 +21,17 @@ async function getData() {
 			const data = {
 				meetingSubject,
 				completeDate,
-				roomLink
+				roomLink,
 			};
 			// console.log(data);
 			const options = {
-				method: 'POST',
+				method: "POST",
 				body: JSON.stringify(data),
 				headers: {
-					'Content-Type': 'application/json'
-				}
+					"Content-Type": "application/json",
+				},
 			};
-			fetch('/pi', options);
-		})
+			fetch("/pi", options);
+		});
 	}
 }
