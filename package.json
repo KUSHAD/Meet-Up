@@ -1,8 +1,8 @@
 {
-	"name": "livestream-server",
-	"version": "0.0.1",
-	"description": "A conference call implementation using WebRTC, Socket.io and Node.js.",
-	"main": "src/app.js",
+	"name": "meet-up",
+	"version": "0.0.2",
+	"description": "Meeting With Your Friends And Organising Meetings Simplified",
+	"main": "app.js",
 	"dependencies": {
 		"@types/express": "^4.17.7",
 		"@types/nedb": "^1.8.10",
@@ -22,11 +22,18 @@
 	},
 	"repository": "git+https://github.com/KUSHAD/Video-Chat.git",
 	"keywords": [
-		"LiveStream",
-		"Server"
+		"Video Conference",
+		"Multi User",
+		"WEBRCTC",
+		"Meet Up",
+		"Nodejs",
+		"Express",
+		"Socket.io",
+		"nedb",
+		"serve-favicon"
 	],
 	"author": "Kushad Chakraborty <kushadck@gmail.com>",
-	"license": "MIT",
+	"license": "SEE LICENSE IN LICENSE",
 	"bugs": {
 		"url": "https://github.com/KUSHAD/Video-Chat/issues"
 	},

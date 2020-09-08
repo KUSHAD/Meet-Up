@@ -1,25 +1,24 @@
-# Conference Call
+<center><img src="./src/appleTouchIcon.png"></center>
 
-A conference call implementation using WebRTC, Socket.io and Node.js.
+# Meetup
 
-# Getting Started
+Meeting With Your Friends And Organising Meetings Simplified
 
--   Run `npm ci`
--   `node src/app.js`
+# Feautures
 
-# Features
-
--   Multi-participants
--   Start or Join a Meeting
--   Toggling of video stream
--   Toggling of audio stream (mute & unmute)
--   Screen sharing
--   Text chat
--   Mute individual participant
--   Expand participants' stream
+-   Start Or Join A Meeting
+-   Video Calling
+-   Togle Audio Streams
+-   Toggle Video Streams
+-   Multi User
+-   Screen Sharing
 -   Screen Recording
--   Video Recording
+-   Rooms
+-   Chatting
+-   See Your Previous Meetings
+-   Schedule Your Meetings
+-   Delete Your Previous Meetings From Record
 
-# Demo
+# Live Demo
 
-You can test at https://video-chat-app-kc.herokuapp.com.
+Check The Live Demo At :- https://video-chat-app-kc.herokuapp.com/
