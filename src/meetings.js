@@ -8,7 +8,7 @@ async function getData() {
 		const root = document.createElement("p");
 		const data = document.createElement("div");
 		const script = document.createElement("span");
-		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} <br /> <a href=''  id='${item._id}'>Delete</a>`;
+		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Meeting Created :- ${item.completeDate}hrs | Scheduled Start Time :- ${item.dataStart}hrs | Scheduled End Time :- ${item.dataEnd}<br /> <a href=''  id='${item._id}'>Delete</a>`;
 		data.append(script);
 		root.append(data);
 		document.body.appendChild(root);

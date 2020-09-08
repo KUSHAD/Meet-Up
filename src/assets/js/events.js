@@ -56,8 +56,9 @@ window.addEventListener("load", () => {
 		let roomName = document.querySelector("#room-name").value;
 		let yourName = document.querySelector("#your-name").value;
 		let meetingSubject = document.querySelector("#subject").value;
-
-		if (roomName && yourName && meetingSubject) {
+		let startingDate = document.querySelector("#start-date").value;
+		let endDate = document.querySelector("#end-date").value;
+		if (roomName && yourName && meetingSubject && startingDate && endDate) {
 			//remove error message, if any
 			document.querySelector("#err-msg").innerHTML = "";
 
@@ -81,10 +82,17 @@ window.addEventListener("load", () => {
 				"#roomId"
 			).innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
 			document.getElementById("share-whatsapp").style.display = `block`;
+			console.log();
 			document
 				.getElementById("share-whatsapp")
 				.addEventListener("click", () => {
-					let whatsappMsg = `@${yourName} has invited you for a meeting for ${meetingSubject} ,  Meeting link :-%0D%0A ${roomLink}`;
+					let whatsappMsg = `@${yourName} has invited you for a meeting for ${meetingSubject} , Scheduled Time :-  ${startingDate.replace(
+						"T",
+						" "
+					)}hrs to ${endDate.replace(
+						"T",
+						" "
+					)}hrs,  Meeting link :-%0D%0A ${roomLink}`;
 
 					window.location = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
 				});
@@ -92,19 +100,23 @@ window.addEventListener("load", () => {
 			document.querySelector("#room-name").value = "";
 			document.querySelector("#your-name").value = "";
 			document.querySelector("#subject").value = "";
+			document.querySelector("#end-date").value = "";
+			document.querySelector("#start-date").value = "";
 			const dateThing = new Date();
 			const date = dateThing.getDate();
 			const month = dateThing.getMonth();
 			const year = dateThing.getFullYear();
 			const hour = dateThing.getHours();
 			const min = dateThing.getMinutes();
-			const sec = dateThing.getSeconds();
-			const completeDate = `${date}/${month}/${year} ${hour}:${min}:${sec}`;
-
+			const completeDate = `${date}/${month}/${year} ${hour}:${min}`;
+			let dataStart = `${startingDate.replace("T", " ")}`;
+			let dataEnd = `${startingDate.replace("T", " ")}`;
 			const data = {
 				meetingSubject,
 				completeDate,
 				roomLink,
+				dataStart,
+				dataEnd,
 			};
 			const options = {
 				method: "POST",
