@@ -22,3 +22,7 @@ Meeting With Your Friends And Organising Meetings Simplified
 # Live Demo
 
 Check The Live Demo At :- https://video-chat-app-kc.herokuapp.com/
+
+# Note
+
+Before Having Some Mischievious Ideas Check <a href="./LICENSE">License</a>
