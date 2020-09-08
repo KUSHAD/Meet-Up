@@ -20,7 +20,7 @@
 		"start": "node app.js",
 		"watch": "nodemon app.js"
 	},
-	"repository": "git+https://github.com/KUSHAD/Video-Chat.git",
+	"repository": "git+https://github.com/KUSHAD/Meet-Up",
 	"keywords": [
 		"Video Conference",
 		"Multi User",
@@ -35,7 +35,7 @@
 	"author": "Kushad Chakraborty <kushadck@gmail.com>",
 	"license": "SEE LICENSE IN LICENSE",
 	"bugs": {
-		"url": "https://github.com/KUSHAD/Video-Chat/issues"
+		"url": "https://github.com/KUSHAD/Meet-Up/issues"
 	},
 	"homepage": "https://video-chat-app-kc.herokuapp.com/",
 	"private": true
