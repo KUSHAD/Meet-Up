@@ -20,7 +20,10 @@
 		"start": "node app.js",
 		"watch": "nodemon app.js"
 	},
-	"repository": "git+https://github.com/KUSHAD/Meet-Up",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/KUSHAD/Meet-Up.git"
+	},
 	"keywords": [
 		"Video Conference",
 		"Multi User",
@@ -38,5 +41,5 @@
 		"url": "https://github.com/KUSHAD/Meet-Up/issues"
 	},
 	"homepage": "https://video-chat-app-kc.herokuapp.com/",
-	"private": true
+	"private": false
 }
