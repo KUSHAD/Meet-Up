@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 getData();
 async function getData() {
 	const respone = await fetch("/api");
@@ -8,7 +8,7 @@ async function getData() {
 		const root = document.createElement("p");
 		const data = document.createElement("div");
 		const script = document.createElement("span");
-		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Meeting Created :- ${item.completeDate}hrs | Scheduled Start Time :- ${item.dataStart}hrs | Scheduled End Time :- ${item.dataEnd}<br /> <a href=''  id='${item._id}'>Delete</a>`;
+		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Meeting Created :- ${item.completeDate}hrs | Scheduled Start Time :- ${item.dataStart}hrs | Scheduled End Time :- ${item.dataEnd}hrs<br /> <a href=''  id='${item._id}'>Delete</a> | <a style="color:#007BFF;cursor:pointer;text-decoration:dashed" id='${item.roomLink}'>Share On Whatsapp</a> `;
 		data.append(script);
 		root.append(data);
 		document.body.appendChild(root);
@@ -33,5 +33,12 @@ async function getData() {
 			};
 			fetch("/pi", options);
 		});
+		document
+			.getElementById(`${item.roomLink}`)
+			.addEventListener("click", () => {
+				let whatsappMsg = `@${item.yourName} has invited you for a meeting for ${item.meetingSubject} , Scheduled Time :- ${item.startingDate}hrs to ${item.endDate}hrs, Meeting Link :- %0D%0A ${item.roomLink}`;
+
+				window.location = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
+			});
 	}
 }

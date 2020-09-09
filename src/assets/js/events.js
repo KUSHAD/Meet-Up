@@ -112,6 +112,7 @@ window.addEventListener("load", () => {
 			let dataStart = `${startingDate.replace("T", " ")}`;
 			let dataEnd = `${startingDate.replace("T", " ")}`;
 			const data = {
+				yourName,
 				meetingSubject,
 				completeDate,
 				roomLink,
