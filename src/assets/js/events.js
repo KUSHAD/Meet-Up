@@ -179,4 +179,7 @@ window.addEventListener("load", () => {
 	document.getElementById("closeModal").addEventListener("click", () => {
 		helpers.toggleModal("recording-options-modal", false);
 	});
+	// let a = ["1", "1", "2", "3", "3", "1", "8"];
+	// let unique = a.filter((item, i, ar) => ar.indexOf(item) === i);
+	// console.log(unique);
 });

@@ -39,7 +39,6 @@ window.addEventListener("load", () => {
 		socket.on("connect", () => {
 			//set socketId
 			socketId = socket.io.engine.id;
-
 			socket.emit("subscribe", {
 				room: room,
 				socketId: socketId,
@@ -50,7 +49,11 @@ window.addEventListener("load", () => {
 					to: data.socketId,
 					sender: socketId,
 				});
+				console.log(data.socketId);
 				pc.push(data.socketId);
+				// let a = pc;
+				// let unique = a.filter((item, i, ar) => ar.indexOf(item) === i);
+				// console.log(unique);
 				init(true, data.socketId);
 			});
 
@@ -58,7 +61,6 @@ window.addEventListener("load", () => {
 				pc.push(data.sender);
 				init(false, data.sender);
 			});
-
 			socket.on("ice candidates", async (data) => {
 				data.candidate
 					? await pc[data.sender].addIceCandidate(
@@ -138,6 +140,14 @@ window.addEventListener("load", () => {
 
 			//add localchat
 			h.addChat(data, "local");
+		}
+
+		function users() {
+			let data = {
+				room: room,
+				sender: username,
+			};
+			socket.emit("users", data);
 		}
 
 		function init(createOffer, partnerName) {
