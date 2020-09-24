@@ -176,19 +176,21 @@
 
 				<div class="col-md-3 chat-col d-print-none mb-2 bg-info" id='chat-pane' hidden>
 					<div class="row">
-						<div class="col-12 text-center h2 mb-3">CHAT</div>
+						<button id="close-chat"
+							style="border-radius: 100px;margin-left: 5%;background-color: #727070;color: #ffff;"
+							title="Close Chat">X</button>
+						<div class="col-12 text-center h2 mb-3">CHAT
+						</div>
 					</div>
 
 					<div id='chat-messages'></div>
 
 					<div class="row">
-						<textarea id='chat-input' style="width: 90%;margin-right: 10%;"
-							class="form-control rounded-0 chat-box border-info" rows='3'
+						<textarea id='chat-input' class="form-control rounded-0 chat-box border-info" rows='3'
 							placeholder="Type here..."></textarea>
 
 					</div>
-					<button style="margin-top: 22.5%;margin-left: 90%;height: 65px;width: fit-content;"
-						id="send-message" class="btn btn-success">Send</button>
+
 
 				</div>
 			</div>

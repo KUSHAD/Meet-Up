@@ -31,7 +31,21 @@ window.addEventListener("load", () => {
 				}
 			}, 300);
 		});
-
+	document.querySelector("#close-chat").addEventListener("click", () => {
+		let chatElem = document.querySelector("#chat-pane");
+		let mainSecElem = document.querySelector("#main-section");
+		if (chatElem.classList.contains("chat-opened")) {
+			chatElem.setAttribute("hidden", true);
+			mainSecElem.classList.remove("col-md-9");
+			mainSecElem.classList.add("col-md-12");
+			chatElem.classList.remove("chat-opened");
+		} else {
+			chatElem.attributes.removeNamedItem("hidden");
+			mainSecElem.classList.remove("col-md-12");
+			mainSecElem.classList.add("col-md-9");
+			chatElem.classList.add("chat-opened");
+		}
+	});
 	//When the video frame is clicked. This will enable picture-in-picture
 	document.getElementById("local").addEventListener("click", () => {
 		if (!document.pictureInPictureElement) {

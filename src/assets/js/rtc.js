@@ -364,21 +364,6 @@ window.addEventListener("load", () => {
 				}
 			});
 
-		// When User Clicks The Send Message
-		document
-			.getElementById("send-message")
-			.addEventListener("click", (e) => {
-				if (document.getElementById("chat-input").value) {
-					sendMsg(document.getElementById("chat-input").value);
-
-					setTimeout(() => {
-						document.getElementById("chat-input").value = "";
-					}, 50);
-				} else {
-					e.preventDefault();
-				}
-			});
-
 		//When the video icon is clicked
 		document
 			.getElementById("toggle-video")
