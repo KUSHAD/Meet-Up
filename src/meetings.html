@@ -21,6 +21,14 @@
 	</head>
 
 	<body>
+		<script>
+			window.console && (setTimeout(function () {
+				return console.log("%c%s", "color: red; background: yellow; font-size: 24px;", "WARNING!")
+			}),
+				setTimeout(function () {
+					return console.log("%c%s", "font-size: 18px;", "Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.\nDo not enter or paste code that you don't understand.")
+				}))
+		</script>
 		<div class="navbar fixed-top bg-info rounded-0 d-print-none">
 			<div style="color: white;" class="title"><a href="/"
 					style="text-decoration:none;color: #ffffff;">&#27;</a>&nbsp;&nbsp;
@@ -29,29 +37,7 @@
 		</div>
 		<br>
 		<br>
-		<script>
-			// getData()
-			// async function getData() {
-			// 	const respone = await fetch('/api')
-			// 	const data = await respone.json()
-			// 	for (item of data) {
-			// 		const root = document.createElement('p');
-			// 		const data = document.createElement('div');
-			// 		const script = document.createElement('span');
-			// 		// script.innerHTML = `Date and Time Created :- ${item.completeDate} | Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Meeting Subject :- ${item.meetingSubject}`
-			// 		script.innerHTML = `${item.meetingSubject} |  Room Link :- <a href='${item.roomLink}'>${item.roomLink}</a> | Date and Time Created :- ${item.completeDate} `
-			// 		data.append(script)
-			// 		root.append(data);
-			// 		document.body.appendChild(root);
-			// 		data.className = `card`
-			// 	}
-			// }
 
-		</script>
-		<script>
-			console.error("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
-			console.warn("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
-		</script>
 
 	</body>
 

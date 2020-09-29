@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
 					to: data.socketId,
 					sender: socketId,
 				});
-				console.log(data.socketId);
+				// console.log(data.socketId);
 				pc.push(data.socketId);
 				// let a = pc;
 				// let unique = a.filter((item, i, ar) => ar.indexOf(item) === i);

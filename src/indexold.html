@@ -196,8 +196,12 @@
 			</div>
 		</div>
 		<script>
-			console.error("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
-			console.warn("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+			window.console && (setTimeout(function () {
+				return console.log("%c%s", "color: red; background: yellow; font-size: 24px;", "WARNING!")
+			}),
+				setTimeout(function () {
+					return console.log("%c%s", "font-size: 18px;", "Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.\nDo not enter or paste code that you don't understand.")
+				}))
 		</script>
 	</body>
 

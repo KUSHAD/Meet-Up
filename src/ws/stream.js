@@ -10,7 +10,7 @@ const stream = (socket) => {
 				socketId: data.socketId,
 			});
 		}
-		console.log(`user id :-`, data.socketId);
+		// console.log(`user id :-`, data.socketId);
 	});
 
 	socket.on("newUserStart", (data) => {
@@ -43,7 +43,7 @@ const stream = (socket) => {
 		socket.to(data.room).emit("users", {
 			sender: data.sender,
 		});
-		console.log(data.sender);
+		// console.log(data.sender);
 	});
 };
 

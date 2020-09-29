@@ -20,11 +20,9 @@
 		<div class="navbar fixed-top bg-info rounded-0 d-print-none">
 			<div style="color:white;" class="title"> <b>Meet Up - Join Or Start A New Meeting</b> </div>
 		</div>
-		<br>
-		<br>
-		<br>
-		<br>
-
+		<center>
+			<video muted style="height: 50%;" autoplay="true" id="videoElement"></video>
+		</center>
 		<center>
 			<a href="./indexold.html" style="text-decoration:none;" rel="noopener noreferrer">
 				<button class="button button-balanced">New
@@ -40,8 +38,23 @@
 			</a>
 		</center>
 		<script>
-			console.error("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
-			console.warn("Warning  !!!!! Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.Do not enter or paste code that you don't understand.")
+			var video = document.querySelector("#videoElement");
+
+			if (navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia({ video: true })
+					.then(function (stream) {
+						video.srcObject = stream;
+					})
+					.catch(function (err0r) {
+						console.log("Something went wrong!");
+					});
+			}
+			window.console && (setTimeout(function () {
+				return console.log("%c%s", "color: red; background: yellow; font-size: 24px;", "WARNING!")
+			}),
+				setTimeout(function () {
+					return console.log("%c%s", "font-size: 18px;", "Using this console may allow attackers to impersonate you and steal your information using an attack called Self-XSS.\nDo not enter or paste code that you don't understand.")
+				}))
 		</script>
 	</body>
 

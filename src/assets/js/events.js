@@ -96,7 +96,7 @@ window.addEventListener("load", () => {
 				"#roomId"
 			).innerHTML = `<a href='${roomLink}'>${roomLink}</a>`;
 			document.getElementById("share-whatsapp").style.display = `block`;
-			console.log();
+			// console.log();
 			document
 				.getElementById("share-whatsapp")
 				.addEventListener("click", () => {
