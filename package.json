@@ -4,21 +4,21 @@
 	"description": "Meeting With Your Friends And Organising Meetings Simplified",
 	"main": "app.js",
 	"dependencies": {
-		"@types/express": "^4.17.7",
-		"@types/nedb": "^1.8.10",
-		"@types/serve-favicon": "^2.5.0",
-		"@types/socket.io": "^2.1.11",
 		"express": "^4.17.1",
 		"nedb": "^1.8.0",
 		"serve-favicon": "^2.5.0",
 		"socket.io": "^2.3.0"
 	},
 	"devDependencies": {
-		"nodemon": "^2.0.3"
+		"@types/express": "^4.17.8",
+		"@types/nedb": "^1.8.11",
+		"@types/serve-favicon": "^2.5.0",
+		"@types/socket.io": "^2.1.11",
+		"nodemon": "^2.0.4"
 	},
 	"scripts": {
 		"start": "node app.js",
-		"watch": "nodemon app.js"
+		"developmental-server": "nodemon app.js"
 	},
 	"repository": {
 		"type": "git",
