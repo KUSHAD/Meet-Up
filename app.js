@@ -6,7 +6,7 @@ const stream = require("./src/ws/stream");
 const path = require("path");
 const favicon = require("serve-favicon");
 const Datastore = require("nedb");
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 const dataBase = new Datastore("datas/my-meetings.db");
 dataBase.loadDatabase();
 
