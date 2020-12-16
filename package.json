@@ -1,6 +1,6 @@
 {
 	"name": "meet-up",
-	"version": "1.1.2-3",
+	"version": "1.1.2-4",
 	"description": "Meeting With Your Friends And Organising Meetings Simplified",
 	"main": "app.js",
 	"dependencies": {
