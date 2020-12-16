@@ -33,15 +33,13 @@
 			</div>
 
 			<div class="col-12 col-md-4 offset-md-4 mb-3">
-				<label for="link">Meeting Link</label>
-				<input type="url" id='link' class="form-control rounded-0" required placeholder="Meeting Link">
+				<label for="link">Meeting Id </label>
+				<input type="text" id='link' class="form-control rounded-0" required placeholder="Meeting ID">
 			</div>
 
 			<div class="col-12 col-md-4 offset-md-4 mb-3">
-				<!-- <button type="submit" id='enter-room' class="btn btn-block rounded-0 btn-info">Enter Room</button> -->
 				<center>
-					<input type="button" id="enter-room" class="button button-royal" value="Join Meeting"
-						onClick="enterRoom()" />
+					<input type="button" id="enter-room" class="button button-royal" value="Join Meeting" onClick="enterRoom()" />
 
 				</center>
 			</div>
@@ -57,8 +55,7 @@
 			function enterRoom() {
 				let name = document.querySelector('#username').value;
 				let room = document.querySelector('#link').value;
-				if (name && room) {
-					//remove error message, if any
+				if (name && room) {				//remove error message, if any
 					document.querySelector('#err-msg-username').innerHTML = "";
 
 					//save the user's name in sessionStorage
@@ -66,7 +63,7 @@
 
 					//reload room
 					// window.open(document.getElementById('link').value);
-					window.open(room, "_self")
+					window.open(`${location.origin}/indexold.html?room=${room}`, "_self")
 				} else {
 					document.querySelector('#err-msg-username').innerHTML = "All Field Are Necessary";
 				}
