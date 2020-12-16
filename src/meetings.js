@@ -34,7 +34,7 @@ async function getData() {
 		document
 			.getElementById(`${item.roomLink}`)
 			.addEventListener('click', () => {
-				let whatsappMsg = `@${item.yourName} has invited you for a meeting for ${item.meetingSubject} , Scheduled Time :- ${item.dataStart}hrs to ${item.dataEnd}hrs, Meeting Link :- %0D%0A ${item.roomLink}`;
+				let whatsappMsg = `@${item.yourName} has invited you for a meeting for ${item.meetingSubject} , Scheduled Time :- ${item.dataStart}hrs to ${item.dataEnd}hrs, Meeting Link :- %0D%0A ${item.roomLink} , Meeting Id :- ${item.roomId}`;
 
 				window.location = `https://api.whatsapp.com/send?text=${whatsappMsg}`;
 			});

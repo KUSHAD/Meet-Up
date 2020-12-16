@@ -74,13 +74,11 @@ window.addEventListener('load', () => {
 
 			//save the user's name in sessionStorage
 			sessionStorage.setItem('username', yourName);
-
-			//create room link
-			let roomLink = `${
-				location.origin
-			}/indexold.html?room=${roomName
+			const roomId = `${roomName
 				.trim()
 				.replace(' ', '_')}_${helpers.generateRandomString()}`;
+			//create room link
+			let roomLink = `${location.origin}/indexold.html?room=${roomId}`;
 
 			//show message with link to room
 			document.querySelector(
@@ -128,6 +126,7 @@ window.addEventListener('load', () => {
 				roomLink,
 				dataStart,
 				dataEnd,
+				roomId,
 			};
 			const options = {
 				method: 'POST',
